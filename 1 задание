@@ -1,31 +1,35 @@
-Человек.java
+Human.java
+java
 
-public class Человек {
+
+public class Human {
     private String name;
     private String currentTransport;
 
-    public Человек(String name, String currentTransport) {
+    public Human(String name) {
         this.name = name;
-        this.currentTransport = currentTransport;
-    }
-
-    public void displayInfo() {
-        System.out.println("Имя: " + name + ", Транспорт: " + currentTransport);
     }
 
     public void setCurrentTransport(String transport) {
         this.currentTransport = transport;
     }
-}
 
-
-Main.java
-
-public class Main {
-    public static void main(String[] args) {
-        Человек человек = new Человек("Иван", "Автомобиль");
-        человек.displayInfo();
-        человек.setCurrentTransport("Велосипед");
-        человек.displayInfo();
+    public void displayInfo() {
+        System.out.println("Name: " + name);
+        System.out.println("Current Transport: " + (currentTransport != null ? currentTransport : "None"));
     }
 }
+
+
+MainApp.java
+java
+
+
+public class MainApp {
+    public static void main(String[] args) {
+        Human human = new Human("Alice");
+        human.setCurrentTransport("Car");
+        human.displayInfo();
+    }
+}
+
